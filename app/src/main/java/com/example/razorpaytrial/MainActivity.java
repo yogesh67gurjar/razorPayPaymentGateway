@@ -24,14 +24,16 @@ public class MainActivity extends AppCompatActivity implements PaymentResultList
 
         binding.paybtn.setOnClickListener(v -> {
 
+            // edittext se amount uthao k kitna payment send krna he
             String amount = binding.amountet.getText().toString();
+            // uska round figure kr lo jese 3.14159 ka 3.00
             int amt = Math.round(Float.parseFloat(amount) * 100);
 
             // initialize razorpay checkout here
             Checkout checkout = new Checkout();
 
             // set key id
-            // this should be our's
+            // this key should be our's
             checkout.setKeyID("rzp_test_7jVbXwD6YudRUL");
 
             // set image
